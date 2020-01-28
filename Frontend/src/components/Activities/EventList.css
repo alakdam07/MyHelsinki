@@ -1,0 +1,95 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.EventList {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  }
+
+
+
+.EventList .grid-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+}
+
+@media (min-width: 52em) {
+  .EventList .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  }
+}
+
+  .EventList .our-event {
+  background: #0b2027;
+  padding: 5em 0;
+  color: rgba(248, 248, 248, 0.6);
+}
+
+   .EventList .event-description {
+  grid-column: span 2;
+}
+@media (min-width: 52em) {
+  .EventList  .event-description {
+    grid-column: auto;
+    grid-row: span 2;
+    align-self: center;
+  }
+}
+
+  .EventList h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 3rem;
+  color: #f8f8f8;
+  margin-top: 0;
+  line-height: 1;
+}
+
+  .EventList .event-title span {
+  display: block;
+  font-weight: 900;
+}
+
+  .EventList .event-member {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+   .EventList .event-member img {
+  width: 100%;
+  display: block;
+}
+   .EventList .event-member figcaption {
+  position: absolute;
+  top: 1em;
+  bottom: 1em;
+  right: 1em;
+  left: 1em;
+  background: rgba(11, 32, 39, 0.8);
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity ease-in-out 300ms;
+}
+  .EventList .event-member:hover figcaption {
+  opacity: 1;
+}
+
+  .EventList .event-member .name {
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+}
